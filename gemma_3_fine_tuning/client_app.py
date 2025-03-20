@@ -1,10 +1,18 @@
 """gemma-3-fine-tuning: A Flower / PyTorch app."""
 
 import torch
+import os
+import warnings
 
+from typing import Dict, Tuple
+from omegaconf import DictConfig
 from flwr.client import ClientApp, NumPyClient
-from flwr.common import Context
-from gemma_3_fine_tuning.task import Net, get_weights, load_data, set_weights, test, train
+from flwr.common import Context, NDArrays, Scalar
+from gemma_3_fine_tuning.models import get_model, set_parameters, get_parameters, cosine_annealing
+from gemma_3_fine_tuning.dataset import get_tokenizer_and_data_collator_and_propt_formatting, load_data, replace_keys
+from transformers import TrainingArguments
+from trl import SFTTrainer
+from flwr.common.config import unflatten_dict
 
 # Avoid warnings
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
@@ -39,6 +47,9 @@ class FlowerClient(NumPyClient):
 
         # instantiate model
         self.model = get_model(model_cfg)
+
+    def get_parameters(self, config):
+        return get_parameters(self.model)
 
     def fit(
         self, parameters: NDArrays, config: Dict[str, Scalar]
@@ -77,9 +88,8 @@ class FlowerClient(NumPyClient):
         )
 
     def evaluate(self, parameters, config):
-        set_weights(self.net, parameters)
-        loss, accuracy = test(self.net, self.valloader, self.device)
-        return loss, len(self.valloader.dataset), {"accuracy": accuracy}
+        # No evaluation in this example
+        return 0.0, 0, {}
 
 
 def client_fn(context: Context) -> FlowerClient:
@@ -105,10 +115,11 @@ def client_fn(context: Context) -> FlowerClient:
         formatting_prompts_func,
         data_collator,
         num_rounds,
-    ).to_client()
+    )
 
 
 # Flower ClientApp
 app = ClientApp(
-    client_fn,
+    client_fn=client_fn,
 )
+

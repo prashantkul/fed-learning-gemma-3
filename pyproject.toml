@@ -12,14 +12,17 @@ dependencies = [
     "flwr-datasets>=0.3.0",
     "torch==2.3.1",
     "trl==0.8.1",
-    "bitsandbytes==0.42.0",
+    "bitsandbytes==0.45.0",
     "scipy==1.13.0",
     "peft==0.6.2",
-    "transformers==4.47.0",
     "sentencepiece==0.2.0",
     "omegaconf==2.3.0",
     "hf_transfer==0.1.8",
+    "transformers @ git+https://github.com/huggingface/transformers@v4.49.0-Gemma-3",
 ]
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["."]
@@ -63,6 +66,10 @@ dataset.name = "mlabonne/FineTome-100k"
 default = "gemma3-local-simulation"
 
 [tool.flwr.federations.gemma3-local-simulation]
-options.num-supernodes = 1
-options.backend.client-resources.num-cpus = 1
-options.backend.client-resources.num-gpus = 0
+#options.num-supernodes = 1
+#options.backend.client-resources.num-cpus = 4
+#options.backend.client-resources.num-gpus = 1
+
+address = "0.0.0.0:9093"
+insecure = true
+

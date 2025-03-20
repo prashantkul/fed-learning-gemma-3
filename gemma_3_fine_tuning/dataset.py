@@ -6,7 +6,7 @@ from transformers import AutoTokenizer
 from trl import DataCollatorForCompletionOnlyLM
 
 FDS = None  # Cache FederatedDataset
-GEMMA_MODEL_NAME = "google/gemma-3-4b-it"  # or "google/gemma-1.1-7b-it"
+GEMMA_MODEL_NAME = "google/gemma-3-4b-it" 
 
 
 def formatting_prompts_func(example):

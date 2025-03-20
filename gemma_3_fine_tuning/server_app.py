@@ -1,4 +1,4 @@
-"""finance: A Flower / FlowerTune app."""
+"""Gemma3 tuning: A Flower / FlowerTune app."""
 
 import os
 from datetime import datetime

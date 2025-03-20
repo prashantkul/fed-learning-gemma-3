@@ -12,7 +12,7 @@ from peft import (
     set_peft_model_state_dict,
 )
 from peft.utils import prepare_model_for_kbit_training
-from transformers import AutoModelForCausalLM, BitsAndBytesConfig
+from transformers import AutoModelForCausalLM, BitsAndBytesConfig, Gemma3ForConditionalGeneration
 
 from flwr.common.typing import NDArrays
 
@@ -39,7 +39,7 @@ def get_model(model_cfg: DictConfig):
             f"Use 4-bit or 8-bit quantization. You passed: {model_cfg.quantization}/"
         )
 
-    model = AutoModelForCausalLM.from_pretrained(
+    model = Gemma3ForConditionalGeneration.from_pretrained(
         model_cfg.name,
         quantization_config=quantization_config,
         torch_dtype=torch.bfloat16,
@@ -55,6 +55,7 @@ def get_model(model_cfg: DictConfig):
         lora_alpha=model_cfg.lora.peft_lora_alpha,
         lora_dropout=0.075,
         task_type="CAUSAL_LM",
+        target_modules=["q_proj", "v_proj"] #Added for gemma3 
     )
 
     if model_cfg.gradient_checkpointing:
