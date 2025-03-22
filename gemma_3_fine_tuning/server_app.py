@@ -3,6 +3,7 @@
 import os
 from datetime import datetime
 
+import torch
 from flwr.common import Context, ndarrays_to_parameters
 from flwr.common.config import unflatten_dict
 from flwr.server import ServerApp, ServerAppComponents, ServerConfig
@@ -59,6 +60,10 @@ def fit_weighted_average(metrics):
 
 def server_fn(context: Context):
     """Construct components that set the ServerApp behaviour."""
+    # Limit server to 20% of GPU memory (adjust as needed)
+    if torch.cuda.is_available():
+        torch.cuda.set_per_process_memory_fraction(0.2, 0)
+
     # Create output directory given current timestamp
     current_time = datetime.now()
     folder_name = current_time.strftime("%Y-%m-%d_%H-%M-%S")

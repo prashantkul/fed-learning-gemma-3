@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gemma-serverapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gemma-serverapp
+  template:
+    metadata:
+      labels:
+        app: gemma-serverapp
+    spec:
+      nodeSelector:
+        cloud.google.com/gke-accelerator: nvidia-tesla-a100
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - gemma-serverapp
+                - gemma-clientapp-1
+                - gemma-clientapp-2
+            topologyKey: "kubernetes.io/hostname"
+      containers:
+      - name: serverapp
+        image: us-central1-docker.pkg.dev/privacy-ml-lab2/flower/flwr/gemma_serverapp:1.2
+        args: 
+          - "--insecure"
+          - "--serverappio-api-address"
+          - "superlink-service:9091"
+        resources:
+          limits:
+            nvidia.com/gpu: 1

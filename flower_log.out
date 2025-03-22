@@ -1,0 +1,124 @@
+nohup: ignoring input
+Loading project configuration... 
+Success
+🎊 Successfully built flower.gemma_3_fine_tuning.1-0-0.d00db40a.fab
+🎊 Successfully started run 9469086179614425794
+[92mINFO [0m:      Starting logstream for run_id `9469086179614425794`
+[92mINFO [0m:      Start `flwr-serverapp` process
+🎊 Successfully installed gemma_3_fine_tuning to /app/.flwr/apps/flower.gemma_3_fine_tuning.1.0.0.d00db40a.
+Automatically detected target modules: ['gate_proj', 'v_proj', 'up_proj', 'o_proj', 'k_proj', 'q_proj', 'down_proj', 'lm_head']
+[92mINFO [0m:      Starting Flower ServerApp, config: num_rounds=10, no round_timeout
+[92mINFO [0m:      
+[92mINFO [0m:      [INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+[92mINFO [0m:      initial parameters (loss, other metrics): 0.0, {}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 1]
+[92mINFO [0m:      Communication budget: used 199.15 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+[92mINFO [0m:      Communication budget: used 398.30 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      fit progress: (1, 0.0, {}, 112.07716505299959)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 2]
+[92mINFO [0m:      Communication budget: used 597.45 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+[92mINFO [0m:      Communication budget: used 796.61 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      fit progress: (2, 0.0, {}, 163.58437153399973)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 3]
+[92mINFO [0m:      Communication budget: used 995.76 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+[92mINFO [0m:      Communication budget: used 1194.91 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      fit progress: (3, 0.0, {}, 217.5665004159996)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 4]
+[92mINFO [0m:      Communication budget: used 1394.06 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+[92mINFO [0m:      Communication budget: used 1593.21 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      fit progress: (4, 0.0, {}, 269.2833921209999)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 5]
+[92mINFO [0m:      Communication budget: used 1792.36 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+[92mINFO [0m:      Communication budget: used 1991.51 MB (+199.15 MB this round) / 200,000 MB
+Automatically detected target modules: ['gate_proj', 'v_proj', 'up_proj', 'o_proj', 'k_proj', 'q_proj', 'down_proj', 'lm_head']
+[92mINFO [0m:      fit progress: (5, 0.0, {}, 323.5750909249996)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 6]
+[92mINFO [0m:      Communication budget: used 2190.67 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+[92mINFO [0m:      Communication budget: used 2389.82 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      fit progress: (6, 0.0, {}, 375.18211887599955)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 7]
+[92mINFO [0m:      Communication budget: used 2588.97 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+[92mINFO [0m:      Communication budget: used 2788.12 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      fit progress: (7, 0.0, {}, 426.59804234999956)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 8]
+[92mINFO [0m:      Communication budget: used 2987.27 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+[92mINFO [0m:      Communication budget: used 3186.42 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      fit progress: (8, 0.0, {}, 477.6621525009996)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 9]
+[92mINFO [0m:      Communication budget: used 3385.57 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+[92mINFO [0m:      Communication budget: used 3584.72 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      fit progress: (9, 0.0, {}, 529.0417177849995)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 10]
+[92mINFO [0m:      Communication budget: used 3783.88 MB (+199.15 MB this round) / 200,000 MB
+[92mINFO [0m:      configure_fit: strategy sampled 2 clients (out of 2)
+[92mINFO [0m:      aggregate_fit: received 2 results and 0 failures
+[92mINFO [0m:      Communication budget: used 3983.03 MB (+199.15 MB this round) / 200,000 MB
+Automatically detected target modules: ['gate_proj', 'v_proj', 'up_proj', 'o_proj', 'k_proj', 'q_proj', 'down_proj', 'lm_head']
+[92mINFO [0m:      fit progress: (10, 0.0, {}, 584.5517494619999)
+[92mINFO [0m:      configure_evaluate: no clients selected, skipping evaluation
+[92mINFO [0m:      
+[92mINFO [0m:      [SUMMARY]
+[92mINFO [0m:      Run finished 10 round(s) in 584.55s
+[92mINFO [0m:      	History (loss, centralized):
+[92mINFO [0m:      		round 0: 0.0
+[92mINFO [0m:      		round 1: 0.0
+[92mINFO [0m:      		round 2: 0.0
+[92mINFO [0m:      		round 3: 0.0
+[92mINFO [0m:      		round 4: 0.0
+[92mINFO [0m:      		round 5: 0.0
+[92mINFO [0m:      		round 6: 0.0
+[92mINFO [0m:      		round 7: 0.0
+[92mINFO [0m:      		round 8: 0.0
+[92mINFO [0m:      		round 9: 0.0
+[92mINFO [0m:      		round 10: 0.0
+[92mINFO [0m:      	History (metrics, distributed, fit):
+[92mINFO [0m:      	{'train_loss': [(1, 1.238162088394165),
+[92mINFO [0m:      	                (2, 1.1468292713165282),
+[92mINFO [0m:      	                (3, 1.0915786266326903),
+[92mINFO [0m:      	                (4, 1.051260757446289),
+[92mINFO [0m:      	                (5, 1.0188471317291259),
+[92mINFO [0m:      	                (6, 0.9932217597961426),
+[92mINFO [0m:      	                (7, 0.9747456073760986),
+[92mINFO [0m:      	                (8, 0.9626154422760009),
+[92mINFO [0m:      	                (9, 0.9561431407928467),
+[92mINFO [0m:      	                (10, 0.9537376403808594)]}
+[92mINFO [0m:      
